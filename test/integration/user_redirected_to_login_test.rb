@@ -53,6 +53,8 @@ class UserRedirectedToLoginTest < ActionDispatch::IntegrationTest
 
     assert_response :success
 
+    puts "+---------------------------------+"
+    puts path   # url escaped
     assert_equal '/register.html' , URI.unescape(path)
 
     end
