@@ -6,6 +6,7 @@ class UserRedirectedToLoginTest < ActionDispatch::IntegrationTest
     # Given: we're on the home page
     get "/"
 
+   # assert_equal zB 'title' mit text bla sie sind auf der login seite...
     assert_select 'title', "Ruby on Rails: Welcome aboard"
 
     # is the login link present
@@ -23,6 +24,9 @@ class UserRedirectedToLoginTest < ActionDispatch::IntegrationTest
       assert_select login_node.first, "[href=?]", "/login"
     end
     
+    #easiest way
+    assert_select "a[href=/login]", /log in/i
+
 
     get '/login'
 
@@ -34,9 +38,24 @@ class UserRedirectedToLoginTest < ActionDispatch::IntegrationTest
     puts URI.unescape(path)
 
     assert_equal '/login.html', URI.unescape(path)
-
-   # assert_equal zB 'h1' mit text bla sie sind auf der login seite...
   end
 
+  test "User ends up on register page when they try to register" do
+    #GIVEN
+    get "/"
+
+    #WHEN
+    assert_select 'a', {:html => /register/i} do | all_links_with_this_html |
+      assert_select all_links_with_this_html.first, "[href=?]", "/register" 
+
+    #THEN
+    get '/register'
+
+    assert_response :success
+
+    assert_equal '/register.html' , URI.unescape(path)
+
+    end
+  end
 
 end
