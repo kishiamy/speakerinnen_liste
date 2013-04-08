@@ -1,6 +1,6 @@
 SpeakerinnenListe::Application.routes.draw do
 
-  devise_for :profiles
+  devise_for :profiles, controllers: {omniauth_callbacks: "omniauth_callbacks"}
 
   resources :profiles, :except => [:new, :create]
 
