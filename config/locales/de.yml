@@ -62,7 +62,8 @@ de:
         firstname: 'Vorname'
         lastname: "Nachname"
         bio: "Bio"
-        topics: "Themen"
+        topic_list: "Tags (mit Kommata getrennt)"
+        tag_list: "schon vorhandene Tags"
         talks: "Vorträge"
         languages: "Sprachen"
         city: "Stadt"

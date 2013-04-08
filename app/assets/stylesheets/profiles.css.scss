@@ -1,7 +1,7 @@
 // Place all the styles related to the profiles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-body { padding-top: 200px; }
+body { padding-top: 70px; }
 
 .header {
   font-size: 18px;
@@ -23,7 +23,7 @@ img {
 
 }
 
-<<<<<<< HEAD
+
 #topics_cloud {
   width: 400px;
   line-height: 1.6em;
@@ -31,10 +31,18 @@ img {
   .m { font-size: 1.2em; }
   .l { font-size: 1.8em; }
 }
-=======
+
+.tag_list {
+  font-weight: bold;
+  font-size: 16px;
+  }
+
+.add-tag-trigger {
+  cursor: pointer;
+}
+
 // this is css to style the search box in the nav bar
 .navbar form { width: 210px; }
 .navbar form input { float: left; }
 .navbar form label { float: left; }
 
->>>>>>> fixed the layout of the main nav
