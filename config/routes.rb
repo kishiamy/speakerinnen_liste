@@ -1,6 +1,10 @@
 SpeakerinnenListe::Application.routes.draw do
 
+<<<<<<< HEAD
   scope "(:locale)", :locale => /en|de/ do
+=======
+  devise_for :profiles, controllers: {omniauth_callbacks: "omniauth_callbacks"}
+>>>>>>> 6ac2f4f8e658404821f373096b3f4aadddda8f30
 
     devise_for :profiles
     
