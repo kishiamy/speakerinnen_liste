@@ -9,6 +9,7 @@ en:
       list: "Speakerinnen"
       contact: "Contact"
       impressum: "Impressum"
+      search: "Search"
       logged_as: "Logged in as" 
       my_profile: "My profile"
       account: "Account"
@@ -24,7 +25,7 @@ en:
     profile:
       topics: 'My topics:'
       languages: 'My languages:'
-      talks: 'Talks held at:'
+      talks: 'Previous Talks:'
       contact: 'Contact:'  
       twitter: 'Twitter:'
       show: 'Show'
@@ -44,7 +45,7 @@ en:
       profile_from: 'Profile from '
       topics: 'My topics:'
       languages: 'My languages:'
-      talks: 'Talks held at:' 
+      talks: 'Previous Talks:' 
       bio: "Bio: "
       email: "Email: "
       twitter: 'Twitter:'  
@@ -62,7 +63,7 @@ en:
         firstname: 'Firstname'
         lastname: "Lastname"
         bio: "Bio"
-        topic_list: "Topics, comma seperated"
+        topic_list: "Topics (comma seperated)"
         tag_list: "Already existing Topics"
         talks: "Talks"
         languages: "Languages"
@@ -81,3 +82,8 @@ en:
         delete: "Delete"
         sure: "Are you sure?"
         confirmation: "Waiting for confirmation from: "
+      new:
+        sign_up: "Signup"
+    sessions:
+      new:
+        login: "Login"
