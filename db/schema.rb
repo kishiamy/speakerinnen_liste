@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(:version => 20130408194211) do
     t.string   "unconfirmed_email"
     t.string   "talks"
     t.boolean  "admin"
+    t.string   "provider"
+    t.string   "uid"
   end
 
   add_index "profiles", ["confirmation_token"], :name => "index_profiles_on_confirmation_token", :unique => true
