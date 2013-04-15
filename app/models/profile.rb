@@ -17,6 +17,8 @@ class Profile < ActiveRecord::Base
     "#{firstname} #{lastname}"
   end
   
+
+
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_create do |profile|
       profile.provider = auth.provider
@@ -24,6 +26,24 @@ class Profile < ActiveRecord::Base
       profile.firstname = auth.info.nickname
     end
   end
+
+
+
+  def password_required?
+    super && provider.blank?
+  end
+
+
+
+  def update_with_password(params, *options)
+    if encrypted_password.blank?
+      update_attributes(params, *options)
+    else
+      super
+    end
+  end
+
+
   
   def self.new_with_session(params, session)
     if session["devise.user_attributes"]
