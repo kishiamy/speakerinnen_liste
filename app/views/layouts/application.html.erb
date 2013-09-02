@@ -21,7 +21,7 @@
           <%= link_to(t(".account"), edit_profile_registration_path, :class => 'header-btn') %> |
           <%= link_to(t(".logout"), destroy_profile_session_path, method: :delete, :class => 'header-btn') %>
         <% else %>
-          <%= link_to(t(".signup"), sign_up_path, :class => 'header-btn') %> 
+          <%= link_to(t(".signup"), sign_up_path, :class => 'header-btn') %>
          |
           <%= link_to(t(".login"), new_profile_session_path, :class => 'header-btn') %>
         <% end %>
@@ -33,7 +33,7 @@
      <!--  <div class="span1">
       <p class="header-btn, language">
         <%= link_to_unless I18n.locale == :en, "EN", locale: :en %> |
-        <%= link_to_unless I18n.locale == :de, "DE", locale: :de %> 
+        <%= link_to_unless I18n.locale == :de, "DE", locale: :de %>
       </p>
     </div>-->
     </div>
@@ -45,10 +45,10 @@
     <% end %>
 
     <% if alert %>
-      <p id="alert"><%= alert %></p>
+      <p id="alert"><%= Array(alert).join("<br>").html_safe %></p>
     <% end %>
 
   <%= yield %>
-  
+
 </body>
 </html>

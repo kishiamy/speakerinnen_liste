@@ -25,11 +25,11 @@ SpeakerinnenListe::Application.routes.draw do
   scope "(:locale)", :locale => /en|de/ do
 
     devise_for :profiles, controllers: {omniauth_callbacks: "omniauth_callbacks"}
-    
+
     get 'topics/:topic', to: 'profiles#index', as: :topic
 
     match 'search' => 'search#search'
-    
+
     #match 'contact' => 'home#contact'
 
     get  'contact' => 'contact#new',    :as => 'contact'
@@ -38,14 +38,14 @@ SpeakerinnenListe::Application.routes.draw do
     match 'impressum' => 'home#impressum'
 
     get '/', to: 'dashboard#index', as: :root
-    
+
     resources :profiles, :except => [:new, :create] do
       get  'contact' => 'contact#new',    :as => 'contact', :on => :member
-      post 'contact' => 'contact#create', :as => 'contact', :on => :member 
+      post 'contact' => 'contact#create', :as => 'contact', :on => :member
     end
 
-    get 'sign_up' => 'pages#sign_up'
-  
+    get  'sign_up' => 'profiles#new'
+    post 'sign_up' => 'profiles#create'
   end
 
 
